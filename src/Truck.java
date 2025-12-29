@@ -10,12 +10,12 @@ public class Truck extends Vehicle {
 
     @Override
     public void startEngine() {
-        System.out.println(brand + " Truck is rumbling to life... CHUG CHUG!");
+        System.out.println(brand + " Truck engine has started.");
     }
 
     @Override
     public void stopEngine() {
-        System.out.println(brand + " Truck parking brake engaged. Engine off.");
+        System.out.println(brand + " Truck engine has stopped.");
     }
 
     @Override

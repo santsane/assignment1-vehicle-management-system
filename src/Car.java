@@ -11,12 +11,12 @@ public class Car extends Vehicle {
 
     @Override
     public void startEngine() {
-        System.out.println(brand + " Car is starting... Vroom vroom!");
+        System.out.println(brand + " Car engine has started");
     }
 
     @Override
     public void stopEngine() {
-        System.out.println(brand + " Car engine stopped.");
+        System.out.println(brand + " Car engine has stopped.");
     }
 
     // Overriding displayInfo to include specific Car details
