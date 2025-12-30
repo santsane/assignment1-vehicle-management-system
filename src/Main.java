@@ -1,30 +1,27 @@
 public class Main {
     public static void main(String[] args) {
-        System.out.println("=== Vehicle Management System ===\n");
+        // Creating the drivers
+        Driver d1 = new Driver("Alihan", "D12345");
+        Driver d2 = new Driver("Tomiris", "M98765");
 
-        // Create Driver objects
-        Driver driver1 = new Driver("Alihan", "D12345");
-        Driver driver2 = new Driver("Tomiris", "M98765");
+        // Creating the vehicles with polymorphism
+        Vehicle v1 = new Car("Toyota", 2022, 4, "Gasoline");
+        Vehicle v2 = new Motorcycle("Harley", 2019, false);
+        Vehicle v3 = new Truck("Volvo", 2021, 15.5, 6);
 
-        // Create Vehicle objects using polymorphism
-        Vehicle myCar = new Car("Toyota", 2022, 4, "Gasoline");
-        Vehicle myBike = new Motorcycle("Harley", 2019, false);
-        Vehicle myTruck = new Truck("Volvo", 2021, 15.5, 6);
+        // Assigning drivers to the vehicles with association
+        v1.setDriver(d1);
+        v2.setDriver(d2);
+        v3.setDriver(d1);
 
-        // Assign drivers to vehicles (Association)
-        myCar.setDriver(driver1);
-        myBike.setDriver(driver2);
-        myTruck.setDriver(driver1); // John drives the truck too (Aggregation)
+        // Array of vehicles
+        Vehicle[] myFleet = {v1, v2, v3};
 
-        // Store vehicles in an array
-        Vehicle[] fleet = {myCar, myBike, myTruck};
-
-        // Loop through the array and process each vehicle
-        for (Vehicle v : fleet) {
-            v.startEngine();
-            v.displayInfo();
-            v.stopEngine();
-            System.out.println(); // Empty line for readability
+        // Looping through the array
+        for (int i = 0; i < myFleet.length; i++) {
+            myFleet[i].startEngine();
+            myFleet[i].displayInfo();
+            myFleet[i].stopEngine();
         }
     }
 }

@@ -2,27 +2,22 @@ public class Car extends Vehicle {
     private int doors;
     private String fuelType;
 
-    // Constructor passing brand and year to the superclass
     public Car(String brand, int year, int doors, String fuelType) {
-        super(brand, year); // Calls Vehicle(brand, year)
+        super(brand, year); // Calls the Vehicle constructor
         this.doors = doors;
         this.fuelType = fuelType;
     }
 
-    @Override
     public void startEngine() {
         System.out.println(brand + " Car engine has started");
     }
 
-    @Override
     public void stopEngine() {
         System.out.println(brand + " Car engine has stopped.");
     }
 
-    // Overriding displayInfo to include specific Car details
-    @Override
     public void displayInfo() {
-        super.displayInfo(); // Call the parent method first
+        super.displayInfo();
         System.out.println("Type: Car");
         System.out.println("Doors: " + doors);
         System.out.println("Fuel: " + fuelType);
